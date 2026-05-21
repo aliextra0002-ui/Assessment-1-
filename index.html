@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pomodoro Timer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <div class="app">
+
+    <!-- Header -->
+    <header>
+      <h1 class="logo">🍅 Pomodoro</h1>
+    </header>
+
+    <!-- Mode Tabs -->
+    <div class="mode-tabs">
+      <button class="tab active" id="focusTab">Focus — 25:00</button>
+      <button class="tab" id="breakTab">Break — 05:00</button>
+    </div>
+
+    <!-- Timer Display -->
+    <div class="timer-wrapper">
+      <div class="timer-ring">
+        <svg class="ring-svg" viewBox="0 0 220 220">
+          <circle class="ring-bg" cx="110" cy="110" r="95"/>
+          <circle class="ring-progress" id="ringProgress" cx="110" cy="110" r="95"/>
+        </svg>
+        <div class="timer-inner">
+          <div class="phase-label" id="phaseLabel">FOCUS</div>
+          <div class="countdown" id="countdown">25:00</div>
+          <div class="session-count" id="sessionCount">Session 1</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="controls">
+      <button class="btn-circle" id="startBtn" aria-label="Start Timer">
+        <span id="btnIcon">▶</span>
+      </button>
+      <button class="btn-reset" id="resetBtn" aria-label="Reset Timer">↺ Reset</button>
+    </div>
+
+    <!-- History -->
+    <div class="history-box">
+      <div class="history-header">
+        <span>📋 Today's Sessions</span>
+        <span id="historyCount">0 completed</span>
+      </div>
+      <ul class="history-list" id="historyList">
+        <li class="history-empty">No sessions yet — start focusing!</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
